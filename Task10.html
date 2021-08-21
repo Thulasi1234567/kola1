@@ -1,0 +1,83 @@
+<html>
+<head>
+<style>
+  body{
+    align-content: center;
+    background-color: rgb(238, 243, 168);
+    margin-left: 490px;
+    margin-top: 100px;
+  }
+</style>
+</head>
+<body>
+  <script>
+    function myFun(){
+      var text = /^[A-Za-z]+$/;
+      var a = document.getElementById("uname").value;
+      var option=document.getElementsByName("rd");
+      
+
+      if((a=="")||(a==null)){
+        document.getElementById("message").innerHTML = " * * Plese fill your name";
+        return false;
+        }
+        if(a.length < 3){
+          document.getElementById("message").innerHTML = "  * *Name must be atleast 3 characters";
+        return false;
+      }
+      if(a.length > 10){
+          document.getElementById("message").innerHTML = "  * *Name should not be more than 10 characters";
+        return false;
+      }
+      if(a.match(text))        
+         true;
+        else{
+          document.getElementById("message").innerHTML = "  only Alphabets are allowed";
+        return false;
+      }
+      if(document.getElementById("location").value=="please select"){
+        document.getElementById("smessage").innerHTML = "  please select place";
+        return false;
+      }     
+     
+     if (!(option[0].checked || option[1].checked)) {
+       alert("Please Select Your Gender");
+      return false;
+}
+
+    }
+    function newFunction() {
+            document.getElementById("newForm").reset();
+         }
+  </script>
+<div class="main">
+       <form action="/Users/saran/Documents/thulasi/thulasi%20programs/ht.html" onsubmit="return myFun()"  id="newForm">
+       </div id="txbox">
+         <label>Enter Your Name:</label>
+         <input type="text" id="uname"><span id="message"></span><br/><br/>
+       </div>
+       </div id="dpmenu">    
+         <label for="#">Choose Native Place:</label>
+         <select name="location" id="location">
+         <option value="please select">please select</option>
+         <option value="Chittoor">Chittoor</option>
+         <option value="Kadapa">Kadapa</option>
+         <option value="Karnool">Karnool</option>
+         <option value="Ananthapur">Ananthapur</option>
+         </select><span id="smessage"></span><br><br />
+       </div>
+       <div id="rdbtn">
+         <label for="age1">Gender :</label>
+         <input type="radio" id="#" name="rd" value="Male">
+         <label for="age1">Male </label>
+         <input type="radio" id="#" name="rd" value="Female">
+         <label for="age1">Female </label>  <br><br />
+       </div>
+        <div id="btns">
+          <input type="submit" id="#" name="#" value="Submit">
+          <input type="button" id="#" name="#" onclick="newFunction()" value="Reset">
+        </div>  
+     </form>
+</div>
+</body>
+</html>
